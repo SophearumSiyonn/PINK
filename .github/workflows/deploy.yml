@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main  
+      - main  # Set this to your default branch
 
 jobs:
   deploy:
@@ -22,13 +22,6 @@ jobs:
           port: 22
           script: |
             # Navigate to your project directory
-            cd /home/ubuntu/your-repo-folder
-            
-            # Pull the latest changes
-            git pull origin main
-            
-            # Install dependencies (example for Node.js)
-            npm install
-            
-            # Restart your application (example for PM2)
-            pm2 restart all
+            cd /home/ubuntu/PINK
+            git pull
+            sudo cp -rd * /var/www/html
