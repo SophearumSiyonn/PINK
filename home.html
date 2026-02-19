@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Page</title>
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe3f1, #ffd1e8, #fff6fb);
+      color:#3a2b35;
+      padding: 20px;
+    }
+
+    .card{
+      width: min(520px, 100%);
+      background: #fff7fb;
+      border: 2px solid #ff9acb;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 28px rgba(255, 95, 162, 0.18);
+      text-align:center;
+    }
+
+    h1{
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    p{
+      margin: 6px 0 14px;
+      line-height: 1.4;
+    }
+
+    .bubble{
+      background: white;
+      border: 1px dashed #ff5fa2;
+      border-radius: 999px;
+      display:inline-block;
+      padding: 10px 14px;
+      margin: 10px 0 16px;
+      font-weight: bold;
+    }
+
+    button{
+      border: none;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ff5fa2;
+      color: white;
+    }
+
+    button:hover{
+      filter: brightness(1.05);
+    }
+
+    small{
+      display:block;
+      margin-top: 12px;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌸 hi bestie</h1>
+    <p>this is your tiny pink corner.</p>
+
+    <div class="bubble" id="msg">click the button for a cute message 💗</div>
+
+    <div>
+      <button id="btn">give me one ✨</button>
+    </div>
+
+    <small>pink + simple + happy</small>
+  </div>
+
+  <script>
+    const messages = [
+      "you got this. like actually.",
+      "small progress still counts 💗",
+      "drink water. stay cute.",
+      "future you is proud already ✨",
+      "be soft. be strong. both.",
+      "one step is enough for today 🌷"
+    ];
+
+    const msg = document.getElementById("msg");
+    document.getElementById("btn").addEventListener("click", () => {
+      const random = Math.floor(Math.random() * messages.length);
+      msg.textContent = messages[random];
+    });
+  </script>
+</body>
+</html>
